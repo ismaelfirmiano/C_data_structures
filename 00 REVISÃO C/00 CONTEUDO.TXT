@@ -1,0 +1,46 @@
+VARIAVEIS
+    INT
+    FLOAT
+    DOUBLE
+    CHAR
+    VOID *
+    PONTEIROS
+
+VETORES
+    ESTÁTICOS
+        INT[]
+        CHAR[] (STRING)
+    DINÂMICOS
+        MALLOC
+        FREE
+
+FUNÇÕES
+    VARIAVEIS
+    PONTEIROS
+    VETORES
+    STRING
+
+STRUCT
+    TYPEDEF
+    SIMPLES
+    VETOR
+
+LISTA
+    SIMPLESMENTE ENCADEADA
+        INSERIR
+        REMOVER
+        IMPRIMIR
+    SIMPLES CIRCULAR
+        INSERIR
+        REMOVER
+        IMPRIMIR
+    DUPLAMENTE ENCADEADA
+        INSERIR
+        REMOVER
+        IMPRIMIR
+    DUPLA CIRCULAR
+        INSERIR
+        REMOVER
+        IMPRIMIR
+
+    
