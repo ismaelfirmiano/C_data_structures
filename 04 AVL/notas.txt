@@ -1,0 +1,23 @@
+RSE (P)
+    FB (P) = -2
+    FB (D) <= 0
+
+RSD (P)
+    FB (P) = 2
+    FB (E) >= 0
+
+RDE (P)
+    FB (P) = -2
+    FB (D) > 0
+
+RED (P)
+    FB (P) = 2
+    FB (E) < 0
+
+Adicionar elemento parecido com ABB porém após adicionar:
+    Calcular Fator de Balanceamento.
+    Fazer a rotação associada.
+
+Remover elemento parecido com ABB porém, após remover:
+    Calcular Fator de Balanceamento.
+    Fazer a rotação associada.

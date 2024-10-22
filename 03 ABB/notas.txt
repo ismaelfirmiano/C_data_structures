@@ -1,0 +1,20 @@
+Elementos menores a esquerda
+Elementos maiores a direita
+
+Adicionar:
+    Se elemento é menor, adionar a esquerda.
+    Se elemento é maior, adionar a direita.
+
+Retirada:
+    1. Procura na info na arvore
+    2. Se não achar o elemento, retorna a arvore
+    3. Verificar filhos:
+        3.1 Se A é folha:
+            free(A), retorn NULL
+        3.2 Tem um filho:
+            free(A), retorn filho
+        3.3 Tem dois filhos:
+            - Vai uma vez para esquerda
+            - Pegar a info mais a direita
+            - Trocar a info
+            - a->esq = retira(a->esq, x)

@@ -1,7 +1,7 @@
 #include "avl.c"
 
 int main(void){
-    TABB * arv = inicializa();
+    TAVL * arv = inicializa();
     int x;
 
     printf("Adicionar: ");

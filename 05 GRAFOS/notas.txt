@@ -1,0 +1,19 @@
+Grafos são conjuntos de não vazios de vertices
+Um grafo pode:
+    ser orientado (digrafo ou dirigido) ou não orientado
+    ter várias arestas ou nenhuma
+
+ORIENTADO:
+    G = (V, E)
+    V = {1, 2, ..., N}
+    E = {(1,2), (2,1), ... (A, B)}
+
+NÃO ORIENTADO:
+    G = (V, E)
+    V = {1, 2, ..., N}
+    E = {{1, 2}, {2, 3}, ... {A, B}}
+
+GRAU DE VERTICES
+    O grau de uma vertice, é a quantidade de arestas associadas
+    Cada vertices tem um grau associoado
+    O grau do grafo é o grau máximo entre suas vertices
