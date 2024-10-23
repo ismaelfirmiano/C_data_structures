@@ -9,6 +9,9 @@ typedef struct ABB{
 TABB * inicializa();
 TABB * ins(TABB * a, int x);
 TABB * rem(TABB * a, int x);
+TABB * copiar(TABB * a);
+TABB * liberar(TABB * a);
+TABB * espelhar(TABB * a);
 
 void imp(TABB *a);
-void imp_form(TABB *a, int n);
+void impForm(TABB *a, int n);

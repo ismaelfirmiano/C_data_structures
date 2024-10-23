@@ -10,6 +10,7 @@ TAVL * cria(int x, TAVL * e, TAVL * d);
 TAVL * fator(TAVL * a);
 TAVL * altura(TAVL * a);
 
+TAVL * rse(TAVL * a);
 TAVL * rsd(TAVL * a);
 TAVL * rde(TAVL * a);
 TAVL * red(TAVL * a);
