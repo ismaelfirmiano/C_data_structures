@@ -22,7 +22,7 @@ TAVL * rsd (TAVL * a){
 }
 
 TAVL * red (TAVL * a){
-
+    
 }
 
 TAVL * rde (TAVL * a){
@@ -53,7 +53,33 @@ TAVL * ins(TAVL * a, int x){
 }
 
 TAVL * rem(TAVL * a, int x){
-
+    if(a){
+        if(a->info > x)
+            a->esq = rem(a->esq, x);
+        else if(a->info < x)
+            a->dir = rem(a->dir, x);
+        if(a->info == x){
+            if(!a->dir && !a->esq){
+                free(a);
+                return NULL;
+            }
+            else if(a->esq && a->dir){
+                TAVL * aux = a->esq;
+                while (aux->dir){
+                    aux = aux->dir;
+                }
+                a->info = aux->info;
+                a->esq = rem(a->esq, a->info);
+                return a;
+            }
+            else {
+                TAVL* aux = (a->esq) ? a->esq : a->dir;
+                free(a);
+                return aux;
+            }
+        }
+    }
+    return a;
 }
 
 

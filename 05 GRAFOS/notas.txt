@@ -17,3 +17,12 @@ GRAU DE VERTICES
     O grau de uma vertice, é a quantidade de arestas associadas
     Cada vertices tem um grau associoado
     O grau do grafo é o grau máximo entre suas vertices
+ 
+ Se existe caminho entre V1 e V2, dizemos que V2 é alcançável a partir de V1
+ Componente conexa:
+    Se todas as vertices estão conectados, dizemos que o grafo está conectado
+    Componente conexa = 1:
+        Todas as vertices estão conectados em um bloco, (grafo conectado)
+    Componente conexa > 1:
+
+Um grafo sem ciclos, é ACÍCLICO

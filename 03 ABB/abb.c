@@ -84,7 +84,6 @@ TABB * espelhar(TABB * a){
         a->dir = espelhar(aux);
     }
     return a;
-    
 }
 
 int alt(TABB *a){
