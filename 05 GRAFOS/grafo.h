@@ -12,12 +12,19 @@ typedef struct no{
     struct no *proxNo;
 }TG;
 
-TG * inicializar();
+TG * inicializar(); // OK
 TG * liberar(TG * g);
-void imp(TG * g);
-TG * busNo(TG * g, int x);
-TVIZ * busViz(TG * g, inx x, int y);
-TG * insNo(TG * g);
-TG * insViz(TG * g);
+void impNos(TG * g); // OK
+void imp(TG * g); // OK
+TG * busNo(TG * g, int x); // OK
+TVIZ * busAresta(TG * g, int x, int y); // OK
+TVIZ * busViz(TVIZ * g, int y); // OK
+TG * insNo(TG * g, int x); // OK
+void insAresta(TG * g, int x, int y); // OK
+TVIZ * insViz(TVIZ * g, int x); // OK
+
+/*
 TG * remNo(TG * g);
-TG * remViz(TG * g);
+void remAresta(TG * g);
+TVIZ * remViz(TG * g);
+*/
