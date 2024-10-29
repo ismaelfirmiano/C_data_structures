@@ -23,11 +23,10 @@ TG * lib(TG * g){
     return NULL;
 }
 
-
 // IMPRIME VIZINHOS
 void impViz(TVIZ * v){
     if(v){
-        printf("%d ", v->idViz);
+        printf(" %d", v->idViz);
         impViz(v->proxViz);
     }
 }
@@ -35,14 +34,14 @@ void impViz(TVIZ * v){
 // IMPRIME COMPLETO
 void imp(TG * g){
     if(g){
-        printf("%d - ", g->idNo);
+        printf("%d ->", g->idNo);
         impViz(g->priViz);
         printf("\n");
         imp(g->proxNo);
     }
 }
 
-// Imprimir Vértices
+// IMPRIMIR VÉRTICES
 void impNos(TG * g){
     if(g){
         printf("%d ", g->idNo);
@@ -50,13 +49,14 @@ void impNos(TG * g){
     } else printf("\n");
 }
 
-
+// BUSCAR VIZINHO
 TVIZ * busViz(TVIZ * v, int y){
     if(!v || (v->idViz == y))
         return v;
     return busViz(v->proxViz, y);
 }
 
+// BUSCAR ARESTA
 TVIZ * busAresta(TG * g, int x, int y){
     TG * no = busNo(g, x);
     if(!no)
@@ -82,7 +82,7 @@ void insArestaOri(TG * g, int x, int y){
         no->priViz = insViz(no->priViz, y);
 }
 
-// INSERIR ARESTA
+// INSERIR ARESTA NÃO ORIENTADA
 void insAresta(TG * g, int x, int y){
     TG * no1 = busNo(g, x);
     TG * no2 = busNo(g, y);
@@ -93,14 +93,58 @@ void insAresta(TG * g, int x, int y){
         
 }
 
-// NÓS DESORDENADOS
+TVIZ * remViz(TVIZ * v, int x){
+    if(v){
+        if(v->idViz == x){
+            TVIZ * aux = v->proxViz;
+            free(v);
+            return aux;
+        }
+        v->proxViz = remViz(v->proxViz, x);
+    }
+    return v;
+}
+
+// REMOVER ARESTA
+void remArestaOri(TG * g, int x, int y){
+    TG * no = busNo(g, x);
+    if(no)
+        remViz(no->priViz, y);
+}
+
+// REMOVER ARESTA NÃO ORIENTADA
+void remAresta(TG * g, int x, int y){
+    remArestaOri(g, x, y);
+    remArestaOri(g, y, x);
+}
+
+// REMOVER NÓ
+TG * remNo(TG * no, int x){
+    if(no){
+        if (no->idNo == x) {
+            libViz(no->priViz);
+            TG * aux = no;
+            no = no->proxNo;
+            free(aux);
+            if(no)
+                remViz(no->priViz, x);
+        }
+        if(no && no->idNo != x){
+            no->priViz = remViz(no->priViz, x);
+            no->proxNo = remNo(no->proxNo, x);
+        }
+    }
+    return no;
+}
+
+// BUSCAR NÓ
 TG * busNo(TG * g, int x){
     if(!g || (g->idNo == x))
         return g;
     return busNo(g->proxNo, x);
 }
 
-// INSERIR NO INICIO
+// INSERIR NO NO INICIO
 TG * insNo(TG * g, int x){
     if(!busNo(g, x)){
         TG * aux = g;
@@ -122,4 +166,3 @@ TG * busNo(TG * g, int x){
     }
     return NULL;
 } */
-
