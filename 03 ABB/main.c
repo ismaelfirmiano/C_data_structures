@@ -3,13 +3,17 @@
 int main(void){
     TABB * arv = inicializa();
     TABB * arv2 = inicializa();
+    TLSE * lista;
+    int * vet;
+    int t = 0;
+    int * tamanho = &t;
     int x;
 
     scanf("%d", &x);
 
     while (x != 0)
     {   
-        if(x<=0){
+        if(x<0){
             switch (x)
             {
 
@@ -67,6 +71,24 @@ int main(void){
             // IMPRIMIR ARVORE 2
             case -9:
                 arv = espelhar(arv);
+                break;
+            
+            case -10:
+                scanf("%d", &x);
+                vet = mN(arv, x, tamanho);
+                impVet(vet, tamanho);
+                printf("\n");
+                break;
+            
+            case -11:
+                printf("ZZ: %d\n", zz(arv));
+                break;
+            
+            case -12:
+                scanf("%d", &x);
+                lista = ancestrais(arv, x);
+                impLista(lista);
+                printf("\n");
                 break;
 
             default:
