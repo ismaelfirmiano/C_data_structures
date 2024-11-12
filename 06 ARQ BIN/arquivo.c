@@ -60,6 +60,37 @@ int busBinArq(char * arq, int x){
     
 }
 
+void ss_arq(char * arq){
+    FILE * fp = fopen(arq, "rbt");
+    if(!fp) exit(1);
+    int menor = 0, menor_elem, i = 0, j = 0, elem, r, s;
+    r = fread(&menor_elem, sizeof(int), 1, fp);
+
+    while (r!=1)
+    {
+        j = ftell(fp);
+        s = fread(&elem, sizeof(int), 1, fp);
+        while (s == 1)
+        {
+            if(elem<menor_elem){
+                menor_elem = elem;
+                menor = j;
+            }
+            j = ftell(fp);
+            s = fread(&elem, sizeof(int), 1, fp);
+        }
+        if(menor != i){
+            fseek(fp, menor, SEEK_SET);
+            
+
+        }
+
+    }
+    
+}
+
+// CLASSIFICAÇÃO EXTERNA
+
 void junta(char * arq1, char * arq2, char * saida){
     FILE    * fp1 = fopen(arq1, "r"),
             * fp2 = fopen(arq2, "r"),
