@@ -10,6 +10,7 @@ TABB * cria(int x, TABB * e, TABB * d){
     novo->dir = d;
     return novo;
 }
+
 TABB * ins(TABB *a, int x){
     if (!a)
         return cria(x, NULL, NULL);

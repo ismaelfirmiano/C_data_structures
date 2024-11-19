@@ -4,6 +4,7 @@ int main(void){
     TAVL * arv = inicializa();
     int x;
 
+    menu();
     scanf("%d", &x);
 
     while (x != 0)
@@ -11,11 +12,6 @@ int main(void){
         if(x<=0){
             switch (x)
             {
-
-            // ENCERRAR
-            case 0:
-                printf("FIM\n");
-                break;
             
             // REMOVER UM ELEMENTO
             case -1:
@@ -54,7 +50,7 @@ int main(void){
                 break;
             
             case -7:
-                impAlt(arv, 0);
+                impFB(arv, 0);
                 break;
             
             default:
