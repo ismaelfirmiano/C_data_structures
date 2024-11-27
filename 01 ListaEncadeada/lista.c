@@ -57,6 +57,17 @@ TLSE *LSE_rem(TLSE *l, int x)
     return l;
 }
 
+TLSE *pop(TLSE *l)
+{
+    if (!l)
+        return NULL;
+    
+    TLSE *aux = l->prox;
+    free(l);
+
+    return aux;
+}
+
 TLSE *LSE_free(TLSE *l)
 {
     if (!l)

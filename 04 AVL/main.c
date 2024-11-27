@@ -49,10 +49,13 @@ int main(void){
                 impAlt(arv, 0);
                 break;
             
+            /*
             case -7:
                 impFB(arv, 0);
                 break;
             
+            */
+           
             default:
                 printf("OPÇÃO INVÁLIDA");
                 break;

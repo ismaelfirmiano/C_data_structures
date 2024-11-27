@@ -5,13 +5,14 @@
 void criaArqBin (char * nome_arq){
     FILE * fp = fopen(nome_arq, "wb");
     if(!fp) exit(1);
-    int atual, ant;
+    int atual;
     printf("Digite valores positivos, caso contrário, pare a gravação\n");
     scanf("%d", &atual);
 
     while (atual > 0)
     {
         fwrite(&atual, sizeof(int), 1, fp);
+        printf("\a");
         scanf("%d", &atual);
     }
 

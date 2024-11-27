@@ -91,6 +91,25 @@ int main(void){
                 printf("\n");
                 break;
 
+            /*
+            case -21:
+                printf("Maior: %d\n", maiorElemento(arv)->info);
+                break;
+
+            case -22:
+                printf("Menor: %d\n", menorElemento(arv)->info);
+                break;
+            
+            case -23:
+                arv = retira_impares(arv);
+                break;
+
+            case -24:
+                scanf("%d", &x);
+                vet = mN(arv, x);
+                break;
+            */
+
             default:
                 printf("OPÇÃO INVÁLIDA");
                 break;

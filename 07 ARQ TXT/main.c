@@ -4,7 +4,7 @@ int main(void) {
     
     criarArq("arq.txt");
 
-    criarPart("arq.txt", 6);
-
+    lerArq("arq.txt");
+    
     return 0;
 }

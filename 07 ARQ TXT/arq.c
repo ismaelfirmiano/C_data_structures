@@ -2,31 +2,32 @@
 
 void criarArq(char * nomeArq){
     
-    FILE * f = fopen(nomeArq, "wb");
+    FILE * f = fopen(nomeArq, "w");
+
     int x;
     scanf("%d", &x);
     while(x>0){
         fprintf(f, "%d ", x);
         scanf("%d", &x);
     }
+
     fclose(f);
 }
 
-void selNat(char * nomeArq, int tamanho){
-    FILE * res = fopen("reservatorio.txt", "w");
+void lerArq(char * nomeArq){
+    
     FILE * f = fopen(nomeArq, "r");
-    int vetor[tamanho];
-    int qtdRes = 0;
-    int elem;
 
-    while(fgets(elem, sizeof(int), f)){
-        while(qtdRes < tamanho){
-
-        }
+    int x, r;
+    r = fscanf(f, "%d", &x);
+    while(r != EOF){
+        printf("%d\n", x);
+        r = fscanf(f, "%d", &x);
     }
-
+    
+    fclose(f);
 }
 
-void selSub(char * nomeArq, int tamanho){
+void criarPart(char * nomeArq, int tamanho){
     
 }

@@ -28,40 +28,75 @@ TAVL * cria(int x, TAVL * e, TAVL * d){
     return novo;
 }
 
-TAVL * rse (TAVL * a){
-    
-}
-
-TAVL * rsd (TAVL * a){
-    
-}
-
-TAVL * red (TAVL * a){
-    
-}
-
-TAVL * rde (TAVL * a){
-    
-}
 int maior(int x, int y){
     return x>y?x:y;
 }
 
-int calAlt(TAVL * a){
-    if(!a)
-        return -1;
-    return 1 + maior(calAlt(a->dir), calAlt(a->esq));
+int alt(TAVL *a){
+    if(!a) return -1;
+    return a->altura;
+}
+
+int fb(TAVL * a){
+    return alt(a->esq) - alt(a->dir);
+}
+
+TAVL * rse (TAVL * a){
+    TAVL *novo = a->dir;
+    a->dir = novo->esq;
+    novo->esq = a;
+    a->altura = 1 + maior(alt(a->esq), alt(a->dir));
+    novo->altura = 1 + maior(alt(novo->esq), alt(novo->dir));
+    return novo;
+}
+
+TAVL * rsd (TAVL * a){
+    TAVL *novo = a->esq;
+    a->esq = novo->dir;
+    novo->dir = a;
+    a->altura = 1 + maior(alt(a->esq), alt(a->dir));
+    novo->altura = 1 + maior(alt(novo->esq), alt(novo->dir));
+    return novo;
+}
+
+TAVL * red (TAVL * a){
+    a->esq = rse(a->esq);
+    a = rsd(a);
+    return a;
+}
+
+TAVL * rde (TAVL * a){
+    a->dir = rsd(a->dir);
+    a = rse(a);
+    return a;
 }
 
 TAVL * ins(TAVL * a, int x){
-    if(!a) return cria(x, NULL, NULL);
+    if(!a)
+        return cria(x, NULL, NULL);
+
     if(a->info < x){
         a->dir = ins(a->dir, x);
+        if(fb(a) == -2){
+            if(x > a->dir->info)
+                a = rse(a);
+            else
+                a = rde(a);
+        }
         
     } else if(a->info > x) {
+
         a->esq = ins(a->esq, x);
+        if(fb(a) == -2){
+            if(x < a->esq->info)
+                a = rsd(a);
+            else
+                a = red(a);
+        }
     }
-    a->altura = calAlt(a);
+
+    a->altura = 1 + maior(alt(a->esq), alt(a->dir));
+
     return a;
 }
 
