@@ -1,0 +1,29 @@
+Análogas a árvore B, exeto por:
+
+    1.  As chaves dos nós são somente para guiar as operações e podem não estar de fato na arvore.
+        Somente as chaves presentes nas folhas estão na estrutura.
+    2.  As folhas são (simplesmente) encadeadas.
+
+B+: mais eficientes que B e mais usadas na prática:
+    Sist Arqs (indexação de arqs):
+        NTFS -> Windows
+        Reiserfs -> Linux
+        XFS -> Linux
+        JFs -> Aix, OS/2, Linux
+    SGBD's (indexação de tabelas):
+        IBM DB2
+        Microsoft SQL server
+        Oracle 8
+        Postgre SQL
+        MySQL
+        SQLITE
+    Outros SGBD's (Acessor aos dados):
+        CouchDB
+        Tokyo Cabinet
+        Tokyo Tyrant
+
+OBS:
+    1.  Todos nós internos são iguais a B!
+        Se a raiz está completa, vamos dividir.
+    2.  Se a divisão ocorre em uma folha:
+        A chave mediana da folha sobe para o pai, mas PERMANECE na folha.
