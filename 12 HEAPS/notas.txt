@@ -1,0 +1,52 @@
+Precisamos criar uma lista de prioridade para execução de tarefas.
+Ex: Servidor de impressão
+    Secretaria > Professor > Aluno
+
+Operações:
+    (I)nserção de qualquer prioridade
+    (R)etirada do mais prioritário
+    (A)lteração do mais prioritário
+    (B)usca do mais prioritário
+
+Implementação?
+    Vetor não ordenado:
+        (I) O(1)
+        (R) O(N)
+        (A) O(N)
+        (B) O(N)
+    Vetor ordenado:
+        (I) O(N)
+        (R) O(N)
+        (A) O(N)
+        (B) O(1)
+    Lista não ordenado:
+        (I) O(1)
+        (R) O(N)
+        (A) O(N)
+        (B) O(N)
+    Lista ordenada:
+        (I) O(N)
+        (R) O(1)
+        (A) O(N)
+        (B) O(1)
+    Solução: HEAP
+        (I) O(log(N))
+        (R) O(log(N))
+        (A) O(log(N))
+        (B) O(log(N))
+
+HEAP: ED manipulada como vetor, mas enchergado como uma arvore binária completa nos níveis internos
+
+Interesse:
+    Heap Bin de máximo (PRIORIDADE) ->  HEAPSORT
+    Heap Bin de mínimo              ->  FILA
+
+    ∀ indice, indice < |HEAP|:
+        V[pai(indice)] >= V (indice)
+
+HEAPSORT:
+    Algorítimo de ordenação: O(Nlog(N))
+    Funções importantes:
+        void maxheapfy (int * vet, int n, int pos);
+        void buildmaxheap(int * vet, int n);
+        void heapsort(int *vet, int n);
